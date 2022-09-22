@@ -1,0 +1,38 @@
+{
+  "Logs" : [ {
+    "LogArn" : "arn:aws:snowball-device:::log/snowball-device-JIDd8d2447a-0f68-4d4b-8b11-055fa116ab9e",
+    "LogType" : "SUPPORT",
+    "ServiceId" : "snowball-device",
+    "EstimatedSizeBytes" : 37553
+  }, {
+    "LogArn" : "arn:aws:snowball-device:::log/s3-service-JIDd8d2447a-0f68-4d4b-8b11-055fa116ab9e",
+    "LogType" : "SUPPORT",
+    "ServiceId" : "s3",
+    "EstimatedSizeBytes" : 342401
+  }, {
+    "LogArn" : "arn:aws:snowball-device:::log/snowball-device-metadata-JIDd8d2447a-0f68-4d4b-8b11-055fa116ab9e",
+    "LogType" : "SUPPORT",
+    "ServiceId" : "snowball-device",
+    "EstimatedSizeBytes" : 4865567
+  }, {
+    "LogArn" : "arn:aws:snowball-device:::log/s3-storage-JIDd8d2447a-0f68-4d4b-8b11-055fa116ab9e",
+    "LogType" : "SUPPORT",
+    "ServiceId" : "s3",
+    "EstimatedSizeBytes" : 500120
+  }, {
+    "LogArn" : "arn:aws:snowball-device:::log/ec2-runtime-JIDd8d2447a-0f68-4d4b-8b11-055fa116ab9e",
+    "LogType" : "SUPPORT",
+    "ServiceId" : "ec2",
+    "EstimatedSizeBytes" : 1354279
+  }, {
+    "LogArn" : "arn:aws:snowball-device:::log/ec2-service-JIDd8d2447a-0f68-4d4b-8b11-055fa116ab9e",
+    "LogType" : "SUPPORT",
+    "ServiceId" : "ec2",
+    "EstimatedSizeBytes" : 4211
+  }, {
+    "LogArn" : "arn:aws:snowball-device:::log/lcd-display-JIDd8d2447a-0f68-4d4b-8b11-055fa116ab9e",
+    "LogType" : "SUPPORT",
+    "ServiceId" : "snowball-device",
+    "EstimatedSizeBytes" : 2006813
+  } ]
+}

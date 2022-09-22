@@ -1,0 +1,3 @@
+{
+  "ServiceIds" : [ "s3", "ec2", "fileinterface" ]
+}

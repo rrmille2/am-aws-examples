@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "dcfcpi",
+    "version": "16",
+    "intents": [
+      {
+        "name": "ReadCaseSummary",
+        "version": "2",
+        "fulfillmentActivity": {
+          "type": "CodeHook",
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:810190279255:function:cpi_read_case_notes",
+            "messageVersion": "1.0"
+          }
+        },
+        "sampleUtterances": [
+          "read me the case notes",
+          "what are the case details",
+          "read me the case details",
+          "what are the case notes",
+          "read the case notes",
+          "read the case details",
+          "read summary",
+          "read the case summary",
+          "read me the case summary"
+        ],
+        "slots": []
+      },
+      {
+        "name": "ListNewCases",
+        "version": "4",
+        "fulfillmentActivity": {
+          "type": "CodeHook",
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:810190279255:function:cpi_list_new_cases",
+            "messageVersion": "1.0"
+          }
+        },
+        "sampleUtterances": [
+          "what are my new cases",
+          "list new cases",
+          "do i have any new cases",
+          "any new cases",
+          "new cases"
+        ],
+        "slots": []
+      },
+      {
+        "name": "SendAddress",
+        "version": "1",
+        "fulfillmentActivity": {
+          "type": "CodeHook",
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:810190279255:function:cpi_send_address",
+            "messageVersion": "1.0"
+          }
+        },
+        "sampleUtterances": [
+          "send me the address",
+          "send me the case address",
+          "text me the address",
+          "text me the case address",
+          "send address",
+          "text address",
+          "send me the directions",
+          "send directions",
+          "text directions"
+        ],
+        "slots": []
+      },
+      {
+        "name": "GoodBye",
+        "version": "5",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Good bye",
+          "Bye",
+          "Exit",
+          "Quit",
+          "Nothing",
+          "Not a thing",
+          "Nothing else",
+          "That's all",
+          "Adios",
+          "End"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Thank you for calling. Good bye."
+            }
+          ]
+        }
+      },
+      {
+        "name": "GetHelp",
+        "version": "6",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "I need some help",
+          "Help me",
+          "Can you give me some help",
+          "Need help",
+          "Help"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "You may say phrases such as: List my new cases; Select Case; Read me the Summary; Send me Directions; or say Goodbye to hang up."
+            }
+          ]
+        }
+      },
+      {
+        "name": "SelectCase",
+        "version": "3",
+        "fulfillmentActivity": {
+          "type": "CodeHook",
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:810190279255:function:cpi_select_case",
+            "messageVersion": "1.0"
+          }
+        },
+        "sampleUtterances": [
+          "select case {CaseNumber}",
+          "select case number {CaseNumber}",
+          "get case number {CaseNumber}",
+          "get case {CaseNumber}"
+        ],
+        "slots": [
+          {
+            "name": "CaseNumber",
+            "slotConstraint": "Required",
+            "slotType": "AMAZON.NUMBER",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Which case number?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "sampleUtterances": []
+          }
+        ]
+      }
+    ],
+    "voiceId": "Matthew",
+    "childDirected": false,
+    "locale": "en-US",
+    "idleSessionTTLInSeconds": 60,
+    "clarificationPrompt": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "Sorry, can you please repeat that?"
+        }
+      ],
+      "maxAttempts": 5
+    },
+    "abortStatement": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "Sorry, I could not understand. Goodbye."
+        }
+      ]
+    }
+  }
+}
